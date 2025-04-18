@@ -18,6 +18,10 @@ dependencies {
     implementation("com.github.javafaker:javafaker:1.0.2")
     // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
     implementation("com.googlecode.json-simple:json-simple:1.1.1")
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-csv
+    implementation("org.apache.commons:commons-csv:1.14.0")
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation("io.qameta.allure:allure-testng:2.29.1")
 }
 
 test {
@@ -29,6 +33,9 @@ test {
             print(project.property("email"))
             print(project.property("password"))
         }
-        suites "./src/test/resources/suite.xml"
+        if(project.hasProperty("suiteName")){
+            systemProperties.put("suiteName",project.property("suiteName"))
+        }
+        suites "./src/test/resources/"+systemProperties.get("suiteName")
     }
 }

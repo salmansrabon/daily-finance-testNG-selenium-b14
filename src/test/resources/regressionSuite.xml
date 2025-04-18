@@ -10,4 +10,9 @@
             <class name="testrunner.RegistrationTestRunner"></class>
         </classes>
     </test>
+    <test name="User Profile update">
+        <classes>
+            <class name="testrunner.UserProfileTestRunner"></class>
+        </classes>
+    </test>
 </suite>
