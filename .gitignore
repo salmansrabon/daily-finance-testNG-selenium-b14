@@ -39,6 +39,8 @@ bin/
 
 ### VS Code ###
 .vscode/
+allure-results
+allure-report
 
 ### Mac OS ###
 .DS_Store
